@@ -1,21 +1,18 @@
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
 const app = require("express")();
+
+const functions = require("firebase-functions");
+
+// Firebase admin
+const admin = require("firebase-admin");
 admin.initializeApp();
 
+// Firebase
 const firebase = require("firebase");
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCATzkzX2v3mTsfO4z5yoqxX54lrOCVY0A",
-  authDomain: "fir-map-304420.firebaseapp.com",
-  projectId: "firebase-map-304420",
-  storageBucket: "firebase-map-304420.appspot.com",
-  messagingSenderId: "200800205098",
-  appId: "1:200800205098:web:216dbaf88f8d323ba50653",
-};
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const config = require("../../config")
+firebase.initializeApp(config.firebaseConfig);
+
 
 const db = admin.firestore();
 
