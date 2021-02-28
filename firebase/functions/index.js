@@ -9,7 +9,7 @@ const FBAuth = require("./util/fbauth")
 
 
 // Chain routes
-app.get("/chains", getAllChains);
+app.get("/chains", FBAuth, getAllChains);
 app.post("/chain", FBAuth, postOneChain);
 
 // User routes
